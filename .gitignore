@@ -1,6 +1,7 @@
-__pycache__/
-*.pyc
 .venv/
-data/app.db
-models/*.joblib
+venv/
+__pycache__/
 .pytest_cache/
+*.pyc
+.env
+.streamlit/secrets.toml
