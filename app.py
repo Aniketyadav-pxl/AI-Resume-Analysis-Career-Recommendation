@@ -23,6 +23,7 @@ with st.sidebar:
     choice = st.radio("Navigate", list(PAGES), label_visibility="collapsed", key="nav")
     st.divider()
     st.caption("Runs locally. Synthetic training data only.")
+    st.markdown("Made by **Aniket Yadav**  \n[LinkedIn](https://www.linkedin.com/in/aniket-yadav07)")
 
 try:
     PAGES[choice]()
