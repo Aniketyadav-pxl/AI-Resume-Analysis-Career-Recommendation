@@ -1,0 +1,22 @@
+SAMPLE FRONTEND CANDIDATE (fictional)
+sample.fe@example.com | +91-00000-00001 | github.com/sample-fe
+
+PROFILE
+Web developer who enjoys building fast, accessible interfaces and clean component architecture.
+
+SKILLS
+HTML5, CSS3, JavaScript (ES6+), TypeScript, React, Redux, Tailwind CSS, Next.js, REST APIs, Git, Cypress
+
+WORK EXPERIENCE
+Frontend Developer, Example Studio (2 years)
+- Built responsive dashboards in React and Redux used by 5,000+ customers.
+- Reduced page load time by 35% by code splitting and lazy loading.
+- Wrote end-to-end tests with Cypress and reviewed pull requests on Git.
+- Consumed REST APIs and handled loading and error states.
+
+PROJECTS
+Portfolio Website - Next.js, Tailwind CSS, deployed with CI.
+Weather App - React app consuming a public REST API.
+
+EDUCATION
+B.Tech in Computer Science, Sample University, 2024

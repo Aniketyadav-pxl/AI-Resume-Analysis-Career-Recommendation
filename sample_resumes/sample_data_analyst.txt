@@ -1,0 +1,29 @@
+CANDIDATE R9006
+Email: candidate9006@example.com
+
+SUMMARY
+Motivated mid professional with hands-on experience in MySQL and Power BI.
+
+SKILLS
+Analytics: Data Cleaning, Excel, Power BI, Tableau
+Backend: REST API
+Data/ML: Pandas, Statistics
+Database: MongoDB, MySQL
+Programming: C#, SQL
+Security: Wireshark
+Soft Skills: Agile, Teamwork, Leadership
+
+EXPERIENCE
+Analyst, Sample Company 55
+- Improved the performance of a performance improvement task by applying Excel.
+- Collaborated with a team of 4 to deliver a customer-facing feature with Tableau and MySQL.
+Analyst, Sample Company 59
+- Developed a college team project using Pandas and Tableau.
+- Developed a fraud detection classifier using Statistics and Excel.
+
+PROJECTS
+- A customer churn prediction model built with Statistics and Tableau.
+- A customer churn prediction model built with SQL and MySQL.
+
+EDUCATION
+M.Tech in Computer Science, Sample University, 2022

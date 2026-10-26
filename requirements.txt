@@ -1,19 +1,14 @@
-# Core app
-streamlit>=1.40
-plotly>=5.24
-
-# Data + ML
-numpy>=1.26
-pandas>=2.2
-scikit-learn>=1.5
+# Runtime dependencies (used by Streamlit Community Cloud and local installs).
+# Tested with Python 3.11 / 3.12. Choose one of these in "Advanced settings" when deploying.
+streamlit>=1.40,<2
+plotly>=5.24,<7
+numpy>=1.26,<3
+pandas>=2.2,<4
+scikit-learn==1.8.0  # pinned: the committed model file was trained with this exact version
 joblib>=1.4
-
-# NLP
-spacy>=3.7
-
-# Resume parsing
+spacy>=3.8,<3.9
 pymupdf>=1.24
 python-docx>=1.1
 
-# Testing
-pytest>=8.0
+# spaCy English model, installed as a normal wheel so no separate download step is needed
+en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl

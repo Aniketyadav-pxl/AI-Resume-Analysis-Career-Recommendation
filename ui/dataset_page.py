@@ -21,7 +21,8 @@ def render():
     c1, c2, c3 = st.columns(3)
     c1.metric("Resumes", len(df))
     c2.metric("Classes", df["target_role"].nunique())
-    c3.metric("Avg. skills / resume", f"{df['skills_truth'].str.count(r'\|').add(1).mean():.1f}")
+    avg_skills = df["skills_truth"].str.split("|").str.len().mean()
+    c3.metric("Avg. skills / resume", f"{avg_skills:.1f}")
 
     st.subheader("Class distribution")
     st.bar_chart(df["target_role"].value_counts())

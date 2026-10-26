@@ -1,0 +1,28 @@
+SAMPLE CANDIDATE (fictional)
+sample.ml@example.com | +91-00000-00000 | github.com/sample-ml | linkedin.com/in/sample-ml
+
+OBJECTIVE
+Final-year computer applications student looking for an entry-level role where I can apply machine learning to real problems.
+
+TECHNICAL SKILLS
+Languages: Python, SQL
+Libraries: NumPy, Pandas, Scikit-learn, Matplotlib, Seaborn, TensorFlow (basics)
+Tools: Git, Jupyter Notebook, VS Code
+Concepts: supervised learning, feature engineering, cross validation, statistics
+
+ACADEMIC PROJECTS
+Movie Recommendation System - Built a content-based recommender using TF-IDF and cosine similarity with Python and Pandas.
+House Price Prediction - Trained regression models with scikit-learn, tuned hyperparameters using cross validation, and plotted results with Matplotlib.
+Spam Classifier - Cleaned text data and trained a classifier, reaching 96% accuracy on a held-out set.
+
+INTERNSHIP
+Data Science Intern, Example Analytics (2 months)
+- Cleaned and merged messy sales data with Pandas.
+- Built dashboards and presented findings to the team.
+
+EDUCATION
+BCA (AI and ML specialisation), Sample University, expected 2027
+
+ACHIEVEMENTS
+- Second place in a college hackathon
+- Completed an online machine learning course

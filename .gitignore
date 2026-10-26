@@ -1,7 +1,10 @@
+__pycache__/
+*.pyc
 .venv/
 venv/
-__pycache__/
 .pytest_cache/
-*.pyc
-.env
-.streamlit/secrets.toml
+# local history database (created at runtime)
+data/app.db
+data/*.db
+# NOTE: models/*.joblib, models/metrics.json, data/*.csv and sample_resumes/ ARE committed
+# so the deployed app works immediately. Re-create them with: python -m src.train

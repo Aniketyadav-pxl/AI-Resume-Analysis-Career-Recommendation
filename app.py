@@ -1,29 +1,31 @@
 """Streamlit entry point:  streamlit run app.py"""
+import logging
+
 import streamlit as st
 
-from ui import dataset_page, home, placeholder
+from ui import analyzer_page, dataset_page, gap_page, history_page, home, jobs_page, model_page, recommendations_page
 
 st.set_page_config(page_title="Resume AI", page_icon=":page_facing_up:", layout="wide")
 
 PAGES = {
-    "Home": lambda: home.render(),
-    "Dataset Explorer": lambda: dataset_page.render(),
-    "Resume Analyzer": lambda: placeholder.render(
-        "Resume Analyzer", "M1-M3", "Upload a PDF/DOCX/TXT and get extracted skills, sections and a quality score."),
-    "Career Recommendations": lambda: placeholder.render(
-        "Career Recommendations", "M4-M5", "Trained classifier predicts the best-fit roles with probabilities."),
-    "Job Matching": lambda: placeholder.render(
-        "Job Matching", "M6", "Rank job postings by cosine similarity with your resume."),
-    "Skill Gap": lambda: placeholder.render(
-        "Skill Gap Analysis", "M7", "Compare your skills with a target role and get a learning list."),
-    "History": lambda: placeholder.render(
-        "History", "M8", "Past analyses stored locally in SQLite."),
+    "Home": home.render,
+    "Resume Analyzer": analyzer_page.render,
+    "Career Recommendations": recommendations_page.render,
+    "Job Matching": jobs_page.render,
+    "Skill Gap": gap_page.render,
+    "History": history_page.render,
+    "Model Insights": model_page.render,
+    "Dataset Explorer": dataset_page.render,
 }
 
 with st.sidebar:
     st.header("Resume AI")
-    choice = st.radio("Navigate", list(PAGES), label_visibility="collapsed")
+    choice = st.radio("Navigate", list(PAGES), label_visibility="collapsed", key="nav")
     st.divider()
-    st.caption("Runs 100% locally. Synthetic data only.")
+    st.caption("Runs locally. Synthetic training data only.")
 
-PAGES[choice]()
+try:
+    PAGES[choice]()
+except Exception:
+    logging.getLogger("resume_ai").exception("Unhandled error on page %s", choice)
+    st.error("This page hit an unexpected error. Reload the page or go back to Home.")

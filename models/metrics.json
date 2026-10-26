@@ -1,0 +1,387 @@
+{
+  "trained_at": "2026-10-17T14:19:27+00:00",
+  "best_model": "Multinomial Naive Bayes",
+  "cv_5fold_on_train": {
+    "Logistic Regression": {
+      "accuracy_mean": 0.9408,
+      "accuracy_std": 0.0138,
+      "f1_macro_mean": 0.9411,
+      "f1_macro_std": 0.0132
+    },
+    "Linear SVM (calibrated)": {
+      "accuracy_mean": 0.9383,
+      "accuracy_std": 0.0122,
+      "f1_macro_mean": 0.9384,
+      "f1_macro_std": 0.0114
+    },
+    "Multinomial Naive Bayes": {
+      "accuracy_mean": 0.9517,
+      "accuracy_std": 0.0097,
+      "f1_macro_mean": 0.9517,
+      "f1_macro_std": 0.0095
+    },
+    "Random Forest": {
+      "accuracy_mean": 0.8925,
+      "accuracy_std": 0.0161,
+      "f1_macro_mean": 0.8919,
+      "f1_macro_std": 0.0164
+    }
+  },
+  "holdout_test": {
+    "accuracy": 0.9467,
+    "precision_macro": 0.9468,
+    "recall_macro": 0.9467,
+    "f1_macro": 0.9464,
+    "top3_accuracy": 1.0,
+    "log_loss": 0.1454
+  },
+  "independent_synthetic_test": {
+    "accuracy": 0.952,
+    "precision_macro": 0.9534,
+    "recall_macro": 0.952,
+    "f1_macro": 0.9521,
+    "top3_accuracy": 1.0,
+    "log_loss": 0.1586
+  },
+  "baselines": {
+    "majority_class_accuracy": 0.1,
+    "rule_based_core_skill_overlap": {
+      "accuracy": 0.7133,
+      "f1_macro": 0.7166
+    }
+  },
+  "per_class": {
+    "Backend Developer": {
+      "precision": 0.9677,
+      "recall": 1.0,
+      "f1-score": 0.9836,
+      "support": 30
+    },
+    "Cybersecurity Analyst": {
+      "precision": 0.9032,
+      "recall": 0.9333,
+      "f1-score": 0.918,
+      "support": 30
+    },
+    "Data Analyst": {
+      "precision": 0.9375,
+      "recall": 1.0,
+      "f1-score": 0.9677,
+      "support": 30
+    },
+    "Data Scientist": {
+      "precision": 0.931,
+      "recall": 0.9,
+      "f1-score": 0.9153,
+      "support": 30
+    },
+    "DevOps Engineer": {
+      "precision": 0.9286,
+      "recall": 0.8667,
+      "f1-score": 0.8966,
+      "support": 30
+    },
+    "Frontend Developer": {
+      "precision": 0.9032,
+      "recall": 0.9333,
+      "f1-score": 0.918,
+      "support": 30
+    },
+    "Full Stack Developer": {
+      "precision": 0.931,
+      "recall": 0.9,
+      "f1-score": 0.9153,
+      "support": 30
+    },
+    "Machine Learning Engineer": {
+      "precision": 0.9655,
+      "recall": 0.9333,
+      "f1-score": 0.9492,
+      "support": 30
+    },
+    "Mobile App Developer": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 30
+    },
+    "QA / Test Engineer": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 30
+    }
+  },
+  "confusion_matrix": {
+    "labels": [
+      "Backend Developer",
+      "Cybersecurity Analyst",
+      "Data Analyst",
+      "Data Scientist",
+      "DevOps Engineer",
+      "Frontend Developer",
+      "Full Stack Developer",
+      "Machine Learning Engineer",
+      "Mobile App Developer",
+      "QA / Test Engineer"
+    ],
+    "matrix": [
+      [
+        30,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        28,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        30,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        2,
+        27,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        3,
+        0,
+        0,
+        26,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        28,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        27,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        28,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        30,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        30
+      ]
+    ]
+  },
+  "top_terms_per_role": {
+    "Backend Developer": [
+      "django",
+      "redis",
+      "flask",
+      "postgresql",
+      "microservices",
+      "spring_boot",
+      "sql",
+      "graphql",
+      "mongodb",
+      "backend django"
+    ],
+    "Cybersecurity Analyst": [
+      "wireshark",
+      "incident_response",
+      "vulnerability_assessment",
+      "network_security",
+      "nmap",
+      "owasp",
+      "penetration_testing",
+      "siem",
+      "security",
+      "burp_suite"
+    ],
+    "Data Analyst": [
+      "data_cleaning",
+      "tableau",
+      "power_bi",
+      "excel",
+      "etl",
+      "seaborn",
+      "statistics",
+      "analytics data_cleaning",
+      "statistics database",
+      "data_visualization"
+    ],
+    "Data Scientist": [
+      "feature_engineering",
+      "data_visualization data",
+      "nlp",
+      "statistics",
+      "scikit_learn",
+      "pytorch",
+      "r",
+      "numpy",
+      "data_visualization",
+      "scikit_learn statistics"
+    ],
+    "DevOps Engineer": [
+      "terraform",
+      "ansible",
+      "github_actions",
+      "nginx",
+      "kubernetes",
+      "prometheus",
+      "azure",
+      "gcp",
+      "jenkins",
+      "ci_cd"
+    ],
+    "Frontend Developer": [
+      "bootstrap",
+      "css",
+      "angular",
+      "html",
+      "cypress",
+      "vue",
+      "javascript",
+      "react",
+      "tailwind_css",
+      "devops git"
+    ],
+    "Full Stack Developer": [
+      "node_js",
+      "react",
+      "backend express",
+      "aws",
+      "typescript",
+      "html",
+      "javascript",
+      "express",
+      "mysql",
+      "node_js rest_api"
+    ],
+    "Machine Learning Engineer": [
+      "spacy",
+      "computer_vision",
+      "keras",
+      "tensorflow",
+      "deep_learning",
+      "pytorch",
+      "machine_learning",
+      "scikit_learn",
+      "docker",
+      "tensorflow devops"
+    ],
+    "Mobile App Developer": [
+      "kotlin",
+      "firebase",
+      "android",
+      "java",
+      "mobile",
+      "jetpack_compose",
+      "app",
+      "swift",
+      "flutter",
+      "database firebase"
+    ],
+    "QA / Test Engineer": [
+      "postman",
+      "selenium",
+      "jira",
+      "test_automation",
+      "manual_testing",
+      "pytest",
+      "sql testing",
+      "testing",
+      "test",
+      "test_automation soft"
+    ]
+  },
+  "dataset": {
+    "n_resumes": 1500,
+    "n_train": 1200,
+    "n_test": 300,
+    "n_classes": 10,
+    "sha256": "e58bb4d4208b15df"
+  },
+  "limitations": [
+    "All training resumes are synthetic and rule-generated from the same skill lists the model is later evaluated on; accuracy on real resumes will be lower.",
+    "Test data comes from the same generator as training data, so the test score measures in-distribution generalisation, not real-world performance.",
+    "Only 10 roles are modelled; resumes outside these roles are still forced into one of them (the probabilities are relative, not an 'out-of-scope' detector).",
+    "Roles overlap heavily in the data (e.g. Frontend / Full Stack, Data Scientist / ML Engineer), so the top-3 view is more meaningful than top-1.",
+    "No demographic or personal attributes are used, but real-world hiring models need fairness audits that synthetic data cannot provide."
+  ]
+}

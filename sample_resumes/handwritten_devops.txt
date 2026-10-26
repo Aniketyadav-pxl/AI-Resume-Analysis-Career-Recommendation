@@ -1,0 +1,18 @@
+SAMPLE DEVOPS CANDIDATE (fictional)
+sample.devops@example.com | +91-00000-00002 | linkedin.com/in/sample-devops
+
+SUMMARY
+Engineer focused on automating deployments and keeping services reliable.
+
+TECHNICAL SKILLS
+Docker, Kubernetes, Jenkins, GitHub Actions, Terraform, Ansible, AWS (EC2, S3, IAM), Linux, Bash scripting, Prometheus, Nginx, Git
+
+EXPERIENCE
+DevOps Engineer, Example Cloud (3 years)
+- Containerised 12 services with Docker and deployed them on Kubernetes.
+- Built CI/CD pipelines in Jenkins and GitHub Actions, cutting release time from 2 hours to 15 minutes.
+- Provisioned AWS infrastructure with Terraform.
+- Set up monitoring and alerting with Prometheus.
+
+EDUCATION
+B.E. in Information Technology, Sample University, 2022

@@ -9,10 +9,12 @@ education         str   degree string
 skills_truth      str   '|' separated canonical skills (ground truth for evaluating the skill extractor)
 resume_text       str   full plain-text resume (what the ML model sees)
 
-Realism knobs (so the ML task is not trivially separable):
-  * each core skill is present with p<1, secondary with p~0.35
-  * 30% of resumes get 1-3 random "noise" skills from unrelated roles
-  * 12% are hybrids that borrow ~35% of a neighbouring role's core skills
+Realism knobs (an earlier, cleaner version was trivially separable: 100% accuracy from the
+skills section alone, and from project nouns alone - a data-leakage red flag):
+  * each core skill is present with p = 0.60-0.82 depending on experience level
+  * 18% career switchers (mostly a neighbouring role's skills), 22% hybrids
+  * 50% of resumes get 2-5 random "noise" skills from unrelated areas
+  * project themes: only 20% role-specific, 25% from a neighbouring role, 55% generic
   * 20% of skill mentions use an alias spelling (e.g. 'sklearn', 'k8s')
 
 Run:  python -m src.data_generator --n 1500
@@ -28,10 +30,10 @@ from src.knowledge_base import (
 )
 
 LEVELS = {  # label: (years range, P(core skill present))
-    "fresher": ((0, 0), 0.75),
-    "junior": ((1, 2), 0.82),
-    "mid": ((3, 5), 0.88),
-    "senior": ((6, 9), 0.92),
+    "fresher": ((0, 0), 0.60),
+    "junior": ((1, 2), 0.68),
+    "mid": ((3, 5), 0.75),
+    "senior": ((6, 9), 0.82),
 }
 LEVEL_WEIGHTS = [0.40, 0.30, 0.20, 0.10]
 DEGREES = ["B.Tech in Computer Science", "BCA", "B.Sc in Information Technology",
@@ -52,15 +54,21 @@ SUMMARY = [
 
 def _pick_skills(role: str, level: str, rng: random.Random) -> list:
     spec, p_core = ROLES[role], LEVELS[level][1]
-    skills = {s for s in spec["core"] if rng.random() < p_core}
+    neighbour = rng.choice(NEIGHBOURS[role])
+    r = rng.random()
+    if r < 0.18:    # career switcher: mostly the neighbouring role's skills, a few of the labelled role's
+        skills = {s for s in ROLES[neighbour]["core"] if rng.random() < p_core}
+        skills |= {s for s in spec["core"] if rng.random() < 0.35}
+    elif r < 0.40:  # hybrid: own core skills plus a good share of the neighbour's
+        skills = {s for s in spec["core"] if rng.random() < p_core}
+        skills |= {s for s in ROLES[neighbour]["core"] if rng.random() < 0.50}
+    else:           # focused profile
+        skills = {s for s in spec["core"] if rng.random() < p_core}
     while len(skills) < 4:  # guarantee a minimally informative resume
-        skills.add(rng.choice(spec["core"]))
-    skills |= {s for s in spec["secondary"] if rng.random() < 0.35}
-    if rng.random() < 0.30:  # noise from anywhere
-        skills |= set(rng.sample(list(SKILLS), rng.randint(1, 3)))
-    if rng.random() < 0.12:  # hybrid / career switcher
-        nb = rng.choice(NEIGHBOURS[role])
-        skills |= {s for s in ROLES[nb]["core"] if rng.random() < 0.35}
+        skills.add(rng.choice(spec["core"] + ROLES[neighbour]["core"]))
+    skills |= {s for s in spec["secondary"] if rng.random() < 0.30}
+    if rng.random() < 0.50:  # unrelated noise skills (hobby projects, courses)
+        skills |= set(rng.sample(list(SKILLS), rng.randint(2, 5)))
     return sorted(skills)
 
 
@@ -81,8 +89,13 @@ def build_resume(idx: int, role: str, rng: random.Random) -> dict:
         a, b = rng.sample(tech_pool, 2)
         return display_name(a), display_name(b)
 
-    def noun():
-        return rng.choice(GENERIC_NOUNS) if rng.random() < 0.30 else rng.choice(ROLES[role]["nouns"])
+    def noun():  # project themes are shared across related roles, so they are only weakly informative
+        r = rng.random()
+        if r < 0.20:
+            return rng.choice(ROLES[role]["nouns"])
+        if r < 0.45:
+            return rng.choice(ROLES[rng.choice(NEIGHBOURS[role])]["nouns"])
+        return rng.choice(GENERIC_NOUNS)
 
     top = rng.sample(tech_pool, 3)
     summary = rng.choice(SUMMARY).format(

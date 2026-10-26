@@ -1,0 +1,26 @@
+CANDIDATE R9007
+Email: candidate9007@example.com
+
+SUMMARY
+Detail-oriented fresher developer skilled in SQL, SQLite and Manual Testing.
+
+SKILLS
+Analytics: Powerbi
+Database: MySQL, SQLite
+DevOps: Ansible, Git
+Mobile: Flutter
+Programming: SQL
+Testing: Manual Testing, Pytest, Selenium
+Soft Skills: Time Management, Communication, Leadership
+
+EXPERIENCE
+Intern, Sample Company 88
+- Implemented a migration project leveraging Ansible.
+- Maintained and documented an internal tool built on Git.
+
+PROJECTS
+- A reporting module built with Ansible and Git.
+- A customer-facing feature built with SQL and Manual Testing.
+
+EDUCATION
+M.Tech in Computer Science, Sample University, 2025

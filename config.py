@@ -19,13 +19,13 @@ ALLOWED_UPLOAD_TYPES = ["pdf", "docx", "txt"]
 # Build-status registry shown on the dashboard. Update status as modules are completed.
 MODULES = [
     ("M0", "Project scaffold, knowledge base, synthetic dataset", "done"),
-    ("M1", "Resume text extraction (PDF / DOCX / TXT)", "pending"),
-    ("M2", "NLP preprocessing and skill extraction", "pending"),
-    ("M3", "Resume analysis and quality score", "pending"),
-    ("M4", "ML training pipeline (TF-IDF + classifiers)", "pending"),
-    ("M5", "Career recommendation engine", "pending"),
-    ("M6", "Job matching (cosine similarity)", "pending"),
-    ("M7", "Skill gap analysis", "pending"),
-    ("M8", "SQLite storage and history", "pending"),
-    ("M9", "Final dashboard and polish", "pending"),
+    ("M1", "Resume text extraction (PDF / DOCX / TXT)", "done"),
+    ("M2", "NLP preprocessing and skill extraction", "done"),
+    ("M3", "Resume analysis and quality score", "done"),
+    ("M4", "ML training pipeline (TF-IDF + classifiers)", "done"),
+    ("M5", "Career recommendation engine", "done"),
+    ("M6", "Job matching (cosine similarity)", "done"),
+    ("M7", "Skill gap analysis", "done"),
+    ("M8", "SQLite storage and history", "done"),
+    ("M9", "Final dashboard and polish", "done"),
 ]

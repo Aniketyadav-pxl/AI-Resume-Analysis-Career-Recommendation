@@ -211,4 +211,6 @@ NEIGHBOURS = {
     "Cybersecurity Analyst": ["DevOps Engineer"],
     "QA / Test Engineer": ["Backend Developer"],
 }
-GENERIC_NOUNS = ["an internal tool", "a college team project", "a client deliverable", "a proof of concept"]
+GENERIC_NOUNS = ["an internal tool", "a college team project", "a client deliverable", "a proof of concept",
+                 "a reporting module", "a customer-facing feature", "a migration project", "a workflow automation",
+                 "a hackathon prototype", "a performance improvement task"]
